@@ -224,6 +224,9 @@ jQuery(document).ready(function ($){
       console.log('false1')
       $(this).parents('.quiz-modal').removeClass('js-active');
       $('.js-quiz-modal-exit').addClass('js-active');
+      step = 1;
+      stepNumber = 1;
+      stepWidth = 100 / 8;
     }
     //Опыт работы
     else if(stepNumber.text() == 2 && step2Number.attr('data-number') == 2 )  {
@@ -241,6 +244,9 @@ jQuery(document).ready(function ($){
       e.preventDefault();
       $(this).parents('.quiz-modal').removeClass('js-active');
       $('.js-quiz-modal-exit2').addClass('js-active');
+      step = 1;
+      stepNumber = 1;
+      stepWidth = 100 / 8;
     }
     //Возраст
     else if(step2Number2.text() >= 25 && step2Number2.text() <= 55 && stepNumber.text() == 3) {
@@ -259,6 +265,9 @@ jQuery(document).ready(function ($){
       console.log(12)
       $(this).parents('.quiz-modal').removeClass('js-active');
       $('.js-quiz-modal-exit3').addClass('js-active');
+      step = 1;
+      stepNumber = 1;
+      stepWidth = 100 / 8;
     }
     // опыт работы с кровлей
     else if (stepNumber.text() == 4 && $('.js-btn-quiz-form4').hasClass('js-active')) {
@@ -287,6 +296,9 @@ jQuery(document).ready(function ($){
       $('.quiz-modal').removeClass('js-active');
       $('.js-quiz-modal-exit4.eight').addClass('js-active');
       $('.js-quiz-modal-exit5').addClass('js-active');
+      step = 1;
+      stepNumber = 1;
+      stepWidth = 100 / 8;
     }
     else {
       e.preventDefault();
@@ -337,22 +349,22 @@ function quizBtn (){
             document.querySelector('.main-quiz').classList.add('active')
         })
     })
-    quizSubmitLast.addEventListener('click',function (e) {
-        e.preventDefault()
-        document.querySelector('.main-quiz').classList.add('active')
-    })
-    quizExit.forEach(function (item){
-        item.addEventListener('click',function () {
-            document.querySelector('.main-quiz').classList.remove('active')
-            document.querySelector('.quiz-modal').classList.add('js-active')
-            document.querySelectorAll('.quiz-modal-form__content--block').forEach(function (item){
-                item.classList.remove('js-active')
-            })
-            document.querySelector('.quiz-modal-form__content--block.one').classList.add('js-active')
-            document.querySelector('.quiz-modal-form__step b').innerHTML = 1
-            document.querySelector('.progress').style.width = 'calc(100%/8)'
-        })
-    })
+    // quizSubmitLast.addEventListener('click',function (e) {
+    //     e.preventDefault()
+    //     document.querySelector('.main-quiz').classList.add('active')
+    // })
+    // quizExit.forEach(function (item){
+    //     item.addEventListener('click',function () {
+    //         document.querySelector('.main-quiz').classList.remove('active')
+    //         document.querySelector('.quiz-modal').classList.add('js-active')
+    //         document.querySelectorAll('.quiz-modal-form__content--block').forEach(function (item){
+    //             item.classList.remove('js-active')
+    //         })
+    //         document.querySelector('.quiz-modal-form__content--block.one').classList.add('js-active')
+    //         document.querySelector('.quiz-modal-form__step b').innerHTML = 1;
+    //         document.querySelector('.progress').style.width = 'calc(100%/8)';
+    //     })
+    // })
 }
 quizBtn()
 

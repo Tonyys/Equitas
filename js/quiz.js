@@ -373,5 +373,4 @@ function quizBtn (){
     })
 }
 quizBtn()
-// coments
-document.querySelector('.last__form-button')
+

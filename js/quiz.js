@@ -309,6 +309,9 @@ jQuery(document).ready(function ($){
   $(document).on('click', '.js-quiz-modal-exit__close', function (e) {
     e.preventDefault();
     $(this).parents('.quiz-modal-exit').removeClass('js-active');
+    step = 1;
+    stepNumber = 1;
+    stepWidth = 100 / 6;
   });
 
   $(document).on('click', '.js-quiz-modal-form__select-item', function (e){
@@ -360,6 +363,9 @@ function quizBtn (){
             document.querySelectorAll('.quiz-modal-form__content--block').forEach(function (item){
                 item.classList.remove('js-active')
             })
+            document.querySelectorAll('.quiz-modal-form__form input').forEach(function (item){
+                item.value = ''
+            })
             document.querySelector('.quiz-modal-form__content--block.one').classList.add('js-active')
             document.querySelector('.quiz-modal-form__step b').innerHTML = 1;
             document.querySelector('.progress').style.width = 'calc(100%/6)';
@@ -367,4 +373,5 @@ function quizBtn (){
     })
 }
 quizBtn()
-
+// coments
+document.querySelector('.last__form-button')
